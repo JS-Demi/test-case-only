@@ -1,0 +1,44 @@
+.dot {
+	$x: var(--x);
+	$y: var(--y);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary);
+	border-radius: 50%;
+	position: absolute;
+	opacity: 100%;
+	transition: all 0.4s ease-in-out;
+	cursor: pointer;
+	transform: translate($x, $y) scale(0.107);
+	width: 56px;
+	height: 56px;
+	z-index: 10;
+
+	&.active,
+	&:hover {
+		transform: translate($x, $y) scale(1);
+		background-color: #fff;
+		border: 1px solid #303e5880;
+	}
+	&.active {
+		cursor: default;
+		.group {
+			transform: scale(1);
+		}
+	}
+}
+.segment {
+	transition: transform 1s ease-in-out;
+	transform: rotate(var(--rotate));
+	position: relative;
+}
+.group {
+	transform: scale(0);
+	transition: transform 1s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 50px;
+	font-size: 20px;
+	font-weight: 700;
+}

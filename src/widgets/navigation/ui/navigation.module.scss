@@ -1,0 +1,67 @@
+.navigation {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 20;
+	padding-left: var(--main-x-padding);
+	width: fit-content;
+	@media screen and (max-width: 768px) {
+		order: 1;
+		gap: 10px;
+		font-size: 14px;
+	}
+}
+.arrows {
+	display: flex;
+	gap: 20px;
+	@media screen and (max-width: 768px) {
+		gap: 8px;
+	}
+}
+.arrow {
+	cursor: pointer;
+	height: 50px;
+	width: 50px;
+	border: 1px solid #42567a80;
+	border-radius: 50%;
+	transition: opacity 0.3s ease-in-out;
+	background-color: #fff;
+	position: relative;
+	z-index: 10;
+	transition: transform 0.3s ease-in-out;
+	@media screen and (max-width: 768px) {
+		width: 25px;
+		height: 25px;
+	}
+	&:hover:not(:disabled) {
+		transform: scale(1.1);
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		border-left: 2px solid var(--primary);
+		border-bottom: 2px solid var(--primary);
+		height: 10px;
+		width: 10px;
+		@media screen and (max-width: 768px) {
+			width: 6px;
+			height: 6px;
+		}
+	}
+	&:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	&_prev {
+		&::after {
+			transform: translate(-35%, -50%) rotate(45deg);
+		}
+	}
+	&_next {
+		&::after {
+			transform: translate(-65%, -50%) rotate(-135deg);
+		}
+	}
+}

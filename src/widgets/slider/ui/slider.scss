@@ -1,0 +1,65 @@
+.swiper {
+	position: initial;
+	animation: fade-in 1s ease-in-out 0.5s;
+	@media screen and (max-width: 768px) {
+		height: 115px;
+	}
+}
+.swiper-slide {
+	@media screen and (max-width: 768px) {
+		width: 60%;
+	}
+}
+.swiper-pagination {
+	position: fixed;
+	bottom: 32px !important;
+	&-bullet-active {
+		background: #42567a;
+	}
+}
+.swiper-button-prev,
+.swiper-button-next {
+	transition: opacity 0.3s ease-in-out;
+	background-color: #fff;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 15px 0px #3877ee1a;
+	opacity: 1;
+	&.swiper-button-disabled {
+		opacity: 0;
+	}
+	&::after {
+		border-top: 2px solid #3877ee;
+		border-right: 2px solid #3877ee;
+		height: 8px;
+		width: 8px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+}
+.swiper-button-next {
+	right: calc(var(--main-x-padding) / 4);
+	&::after {
+		transform: translate(-65%, -50%) rotate(45deg);
+	}
+}
+.swiper-button-prev {
+	left: calc(var(--main-x-padding) / 4);
+	&::after {
+		transform: translate(-35%, -50%) rotate(-135deg);
+	}
+}
+.hide {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

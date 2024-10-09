@@ -1,0 +1,21 @@
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.year {
+	color: #3877ee;
+	font-size: 25px;
+	font-family: 'Bebas Neue';
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+.text {
+	font-size: 20px;
+	line-height: 30px;
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
